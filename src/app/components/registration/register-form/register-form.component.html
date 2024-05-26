@@ -1,0 +1,93 @@
+<div class="main-container">
+<img src="assets/travelPhoto.svg" alt="photo">
+<h2 class="form-title"> Register </h2>
+<div class="form-container">
+    <ul>
+        <form #form = "ngForm" [formGroup] = "RegisterForm" (ngSubmit)="onSubmit()" >
+        
+        <li>
+            <div class="form-group">
+                <label for="FirstName">First Name</label>
+                <input type="text" class="input-field" id="FirstName" placeholder="Easyset24" formControlName="firstName" >
+                 <div *ngIf="RegisterForm.get('firstName')?.invalid && RegisterForm.get('firstName')?.touched" class="text-danger"> First Name is required.
+                  </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="form-group">
+                <label for="LastName">Last Name</label>
+                <input type="text" class="input-field" id="LastName" placeholder="Easyset24"
+                formControlName="lastName">
+                <div *ngIf="RegisterForm.get('lastName')?.invalid && RegisterForm.get('lastName')?.touched" class="text-danger">Last Name is required.</div>
+            </div>
+        </li>
+        <li>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="text" class="input-field" id="Email" placeholder="Easyset24@Gmail.com" formControlName="email">
+                <div *ngIf="RegisterForm.get('email')?.invalid  && RegisterForm.get('email')?.touched" class="text-danger">Email is required.</div>
+
+            </div>
+        </li>
+        <li>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" class="input-field" id="Password" formControlName="password">
+                <div *ngIf="RegisterForm.get('password')?.invalid  && RegisterForm.get('password')?.touched" class="text-danger">  Password must be at least 8 characters long.</div>
+
+            </div>
+        </li>
+        <li>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="input-field" id="confirmPassword" formControlName="confirmPassword">
+                <div *ngIf="RegisterForm.get('confirmPassword')?.invalid  && RegisterForm.get('confirmPassword')?.touched" class="text-danger">  Password must match.</div>
+            </div>
+        </li>
+        <li>
+             <div class="form-group form-check">
+                <input type="checkbox" id="acceptTerms" formControlName="acceptTerms" class="form-check-input">
+                <label for="acceptTerms" class="form-check-label">I agree to all the Terms and Privacy Policies</label>
+                <div *ngIf="RegisterForm.get('acceptTerms')?.invalid && RegisterForm.get('acceptTerms')?.touched" class="text-danger">
+                You must accept the terms and privacy policies. </div>
+             </div>
+        </li>
+        <button type="submit" [disabled]="!RegisterForm.valid">Regiser Now</button>
+        <p>Already have an account? Login</p>
+        <div class="social">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="47" height="47" rx="3.5" stroke="#D9D9D9"/>
+<rect x="12" y="12" width="24" height="24" rx="12" fill="#1877F2"/>
+<path d="M28.6711 27.4688L29.2031 24H25.875V21.75C25.875 20.8008 26.3391 19.875 27.8297 19.875H29.3438V16.9219C29.3438 16.9219 27.9703 16.6875 26.6578 16.6875C23.9156 16.6875 22.125 18.3492 22.125 21.3563V24H19.0781V27.4688H22.125V35.8547C22.7367 35.9508 23.3625 36 24 36C24.6375 36 25.2633 35.9508 25.875 35.8547V27.4688H28.6711Z" fill="#D9D9D9"/>
+        </svg>
+
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="48" height="48" rx="4" fill="white"/>
+<rect x="0.5" y="0.5" width="47" height="47" rx="3.5" stroke="#D9D9D9"/>
+<path d="M33.7732 30.7033C33.407 31.5418 32.9734 32.3136 32.4711 33.0232C31.7864 33.9906 31.2258 34.6602 30.7938 35.032C30.1241 35.6424 29.4065 35.955 28.6381 35.9728C28.0865 35.9728 27.4212 35.8172 26.6468 35.5017C25.8699 35.1876 25.1559 35.032 24.5031 35.032C23.8184 35.032 23.0841 35.1876 22.2986 35.5017C21.512 35.8172 20.8783 35.9816 20.3938 35.9979C19.6569 36.0291 18.9225 35.7076 18.1893 35.032C17.7214 34.6276 17.1362 33.9343 16.435 32.9521C15.6828 31.9033 15.0643 30.687 14.5798 29.3004C14.0609 27.8026 13.8008 26.3523 13.8008 24.9482C13.8008 23.3398 14.1515 21.9526 14.854 20.7901C15.4061 19.8564 16.1405 19.1198 17.0598 18.5791C17.979 18.0383 18.9722 17.7628 20.0419 17.7452C20.6271 17.7452 21.3946 17.9246 22.3484 18.2771C23.2995 18.6309 23.9102 18.8103 24.1779 18.8103C24.3781 18.8103 25.0565 18.6005 26.2066 18.1823C27.2941 17.7945 28.212 17.6339 28.964 17.6972C31.0016 17.8601 32.5324 18.6561 33.5505 20.0901C31.7281 21.1843 30.8267 22.7169 30.8446 24.6829C30.8611 26.2142 31.4217 27.4886 32.5235 28.5004C33.0228 28.97 33.5804 29.333 34.2008 29.5907C34.0662 29.9774 33.9242 30.3477 33.7732 30.7033ZM29.1 12.4801C29.1 13.6804 28.6575 14.8011 27.7755 15.8384C26.7111 17.0716 25.4237 17.7841 24.0275 17.6717C24.0098 17.5277 23.9994 17.3761 23.9994 17.2169C23.9994 16.0646 24.5056 14.8315 25.4045 13.8232C25.8533 13.3127 26.4241 12.8882 27.1162 12.5496C27.8069 12.2161 28.4602 12.0316 29.0746 12C29.0926 12.1605 29.1 12.3209 29.1 12.4801V12.4801Z" fill="black"/>
+        </svg>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="47" height="47" rx="3.5" fill="white"/>
+<rect x="0.5" y="0.5" width="47" height="47" rx="3.5" stroke="#D9D9D9"/>
+<g clip-path="url(#clip0_1909_16175)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M35.52 24.2729C35.52 23.422 35.4436 22.6038 35.3018 21.8184H24V26.4602H30.4582C30.18 27.9602 29.3345 29.2311 28.0636 30.082V33.0929H31.9418C34.2109 31.0038 35.52 27.9274 35.52 24.2729Z" fill="#4285F4"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.001 36.0003C27.241 36.0003 29.9573 34.9257 31.9428 33.093L28.0646 30.0821C26.9901 30.8021 25.6155 31.2275 24.001 31.2275C20.8755 31.2275 18.2301 29.1166 17.2864 26.2803H13.2773V29.3894C15.2519 33.3112 19.3101 36.0003 24.001 36.0003Z" fill="#34A853"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.2855 26.2804C17.0455 25.5604 16.9091 24.7913 16.9091 24.0004C16.9091 23.2095 17.0455 22.4404 17.2855 21.7204V18.6113H13.2764C12.4636 20.2313 12 22.0641 12 24.0004C12 25.9368 12.4636 27.7695 13.2764 29.3895L17.2855 26.2804Z" fill="#FBBC05"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.001 16.7727C25.7628 16.7727 27.3446 17.3782 28.5883 18.5673L32.0301 15.1255C29.9519 13.1891 27.2355 12 24.001 12C19.3101 12 15.2519 14.6891 13.2773 18.6109L17.2864 21.72C18.2301 18.8836 20.8755 16.7727 24.001 16.7727Z" fill="#EA4335"/>
+</g>
+<defs>
+<clipPath id="clip0_1909_16175">
+<rect width="24" height="24" fill="white" transform="translate(12 12)"/>
+</clipPath>
+</defs>
+       </svg>
+       </div>
+
+
+
+
+        </form>
+    </ul>
+</div>
+</div>

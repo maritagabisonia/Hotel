@@ -1,0 +1,57 @@
+.header{
+    display: flex;
+}
+.logo{
+    position: relative;
+    top: 15px;
+    left: 95px;
+}
+.ukflag{
+    position: relative;
+    top: 29px;
+    left: 115px;
+}
+.question{
+ position: relative;
+    top: 23px;
+    left: 145px;
+}
+.search{
+    position: relative;
+    top: 23px;
+    left: 245px;
+}
+input{
+    width: 697px;
+    height: 40px;
+    top: 11px;
+    left: 105px;
+    gap: 8px;
+    opacity: 0px;
+    font-style: Typography_Desktop/Label S;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.8px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+span{
+    position: relative;
+    top: 4px;
+    left: -29px;
+}
+
+button{
+    margin-right: 15px;
+    position: relative;
+    top: 25px;
+    left: 315px;
+    width: 189px;
+    height: 40px;
+    padding: 8px 16px 8px 16px;
+    gap: 16px;
+    border-radius: 4px;
+    border: 1px solid #07689F;
+    color: #07689F;
+}

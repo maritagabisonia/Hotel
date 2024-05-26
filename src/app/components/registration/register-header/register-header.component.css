@@ -1,0 +1,24 @@
+.header {
+ width: 1440px;
+ height: 108px;
+ border: 0px 0px 1px 0px;
+
+}
+
+.logo {
+  width:  89px;
+ height:  66px;
+ position: relative;
+ top:12px;
+ left:85px;
+}
+.ukflag {
+ top:50px;
+ position: absolute;
+ left: 1500px;
+}
+.question {
+ top:43px;
+ position: absolute;
+ left: 1580px;
+}

@@ -1,0 +1,20 @@
+<div class="hotelList">
+    <ul>
+        <li *ngFor="let hotel of HotelsService.HotelsList">
+        <div class="hotel-card">
+            <div class="hotel-image">
+                 <img [src]="hotel.photo" alt="Hotel Image">
+            </div>
+            <div class="hotel-info">
+                    <div class="hotel-header">
+                     <h2>{{hotel.place}}</h2>
+                    </div>
+                 <p class="hotel-side">SIDE</p>
+                 <p class="hotel-date">{{hotel.date}}</p>
+                 <p class="hotel-description">{{hotel.description}}</p>
+                 <button (click)="addToFavorites(hotel)">add</button>
+            </div>
+        </div>
+        </li>
+    </ul>
+</div>
